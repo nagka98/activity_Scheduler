@@ -13,7 +13,8 @@
 /////////////////////////////
 /* COMPILER DEFINES */
 /////////////////////////////
-#define SCHEDULER_SPEED 1
+#define SCHEDULER_SPEED 15
+#define WARNING_TIMEOUT 10 /* in minutes */
 
 #if SCHEDULER_SPEED > 59
 #undef SCHEDULER_SPEED

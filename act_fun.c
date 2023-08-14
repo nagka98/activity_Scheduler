@@ -11,6 +11,10 @@
 #define SCHEDULER_SPEED 1
 #endif
 
+#ifndef WARNING_TIMEOUT
+#define WARNING_TIMEOUT 10
+#endif
+
 /////////////////////////////
 /* FUNCTION DEFINITION */
 /////////////////////////////
@@ -30,7 +34,7 @@ void activity_function(activity_state* activity_pointer, int timestamp, Trigger_
     switch (trigger)
     {
     case scheduled_request:
-        if(deadline - timestamp > 10)
+        if(deadline - timestamp > remap_timestamp((int)WARNING_TIMEOUT))
         {
             if(!current_activity->info_status)
             {
