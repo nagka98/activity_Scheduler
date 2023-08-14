@@ -9,10 +9,10 @@ OBJ_FILES = $(APP_SRCS:.c=.o)
 all: $(OUT)
 
 %.o: %.c
-	$(CXX) $(LINK_FLAG) -c $< -o $@
+	$(CXX) $(LINK_FLAG) -c $< -o $@ -static
 
 $(OUT): $(OBJ_FILES)
-	$(CXX) $(OBJ_FILES) -o $(OUT)
+	$(CXX) $(LINK_FLAG) $(OBJ_FILES) -o $(OUT)
 
 clean:
 	rm -f $(OBJ_FILES) $(OUT)

@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "act_fun.h"
 #include <string.h>
+#include <pthread.h>
 
 /////////////////////////////
 /*LOCAL VARIABLES*/
